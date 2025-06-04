@@ -264,7 +264,8 @@ export const userService = {
                 params.minCapacity = minCapacity;
             }
             
-            const response = await axios.get('/rooms', { params });
+            // Use the API_URL constant for the request
+            const response = await axios.get(`${API_URL}/rooms`, { params });
             return response.data;
         } catch (error: any) {
             const errorMessage = error.response?.data?.message || 'Không thể tải thông tin phòng';
